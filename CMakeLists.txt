@@ -11,6 +11,7 @@ pico_sdk_init()
 add_executable(example  
     example.c
     bmx160.c
+    bmx_defines.h
 )
 
 target_link_libraries(example
@@ -24,9 +25,6 @@ SET(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -ffunction-sections -fdata-sections")
 # Configure Pico
 pico_enable_stdio_usb(example 1)
 pico_enable_stdio_uart(example 0)
-add_compile_definitions(PICO_UART_ENABLE_CRLF_SUPPORT=0)
-add_compile_definitions(PICO_STDIO_ENABLE_CRLF_SUPPORT=0)
-add_compile_definitions(PICO_STDIO_DEFAULT_CRLF=0)
 
 # Generate UF2
 pico_add_extra_outputs(example)

@@ -1,0 +1,3 @@
+/home/sriram/Desktop/BMX160/BMX160-pi-pico/build/pioasm/CMakeFiles/pioasm.dir
+/home/sriram/Desktop/BMX160/BMX160-pi-pico/build/pioasm/CMakeFiles/edit_cache.dir
+/home/sriram/Desktop/BMX160/BMX160-pi-pico/build/pioasm/CMakeFiles/rebuild_cache.dir

@@ -33,7 +33,48 @@ CMakeFiles/example.dir/bmx160.c.obj: ../bmx160.c \
   /usr/include/newlib/machine/types.h \
   /usr/include/newlib/sys/stdio.h \
   /usr/lib/gcc/arm-none-eabi/10.3.1/include/stdint.h \
-  ../bmx_structs.h
+  /home/sriram/pico/pico-sdk/src/rp2_common/hardware_i2c/include/hardware/i2c.h \
+  /home/sriram/pico/pico-sdk/src/common/pico_base/include/pico.h \
+  /home/sriram/pico/pico-sdk/src/common/pico_base/include/pico/types.h \
+  /home/sriram/pico/pico-sdk/src/common/pico_base/include/pico/assert.h \
+  /usr/lib/gcc/arm-none-eabi/10.3.1/include/stdbool.h \
+  /usr/include/newlib/assert.h \
+  generated/pico_base/pico/version.h \
+  /home/sriram/pico/pico-sdk/src/common/pico_base/include/pico/config.h \
+  generated/pico_base/pico/config_autogen.h \
+  /home/sriram/pico/pico-sdk/src/boards/include/boards/pico.h \
+  /home/sriram/pico/pico-sdk/src/rp2_common/cmsis/include/cmsis/rename_exceptions.h \
+  /home/sriram/pico/pico-sdk/src/rp2_common/pico_platform/include/pico/platform.h \
+  /home/sriram/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/platform_defs.h \
+  /home/sriram/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/addressmap.h \
+  /home/sriram/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/sio.h \
+  /home/sriram/pico/pico-sdk/src/common/pico_base/include/pico/types.h \
+  /home/sriram/pico/pico-sdk/src/common/pico_base/include/pico/error.h \
+  /home/sriram/pico/pico-sdk/src/common/pico_time/include/pico/time.h \
+  /home/sriram/pico/pico-sdk/src/rp2_common/hardware_timer/include/hardware/timer.h \
+  /home/sriram/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h \
+  /home/sriram/pico/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h \
+  /home/sriram/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h \
+  /home/sriram/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/i2c.h \
+  /home/sriram/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/i2c.h \
+  /home/sriram/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
+  /home/sriram/pico/pico-sdk/src/common/pico_stdlib/include/pico/stdlib.h \
+  /home/sriram/pico/pico-sdk/src/rp2_common/pico_stdio/include/pico/stdio.h \
+  /home/sriram/pico/pico-sdk/src/rp2_common/hardware_gpio/include/hardware/gpio.h \
+  /home/sriram/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/sio.h \
+  /home/sriram/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h \
+  /home/sriram/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/padsbank0.h \
+  /home/sriram/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/pads_bank0.h \
+  /home/sriram/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/iobank0.h \
+  /home/sriram/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/io_bank0.h \
+  /home/sriram/pico/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h \
+  /home/sriram/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/intctrl.h \
+  /home/sriram/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/m0plus.h \
+  /home/sriram/pico/pico-sdk/src/rp2_common/hardware_uart/include/hardware/uart.h \
+  /home/sriram/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/uart.h \
+  /home/sriram/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/uart.h \
+  /home/sriram/pico/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h \
+  ../bmx_defines.h
 
 CMakeFiles/example.dir/example.c.obj: ../example.c \
   /usr/include/newlib/stdio.h \
@@ -103,7 +144,12 @@ CMakeFiles/example.dir/example.c.obj: ../example.c \
   /home/sriram/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/uart.h \
   /home/sriram/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/uart.h \
   /home/sriram/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
-  /home/sriram/pico/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h
+  /home/sriram/pico/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h \
+  ../bmx160.h \
+  /home/sriram/pico/pico-sdk/src/rp2_common/hardware_i2c/include/hardware/i2c.h \
+  /home/sriram/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/i2c.h \
+  /home/sriram/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/i2c.h \
+  ../bmx_defines.h
 
 CMakeFiles/example.dir/home/sriram/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj: /home/sriram/pico/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c \
   /home/sriram/pico/pico-sdk/lib/tinyusb/src/tusb_option.h \
@@ -2963,14 +3009,6 @@ CMakeFiles/example.dir/home/sriram/pico/pico-sdk/src/rp2_common/pico_unique_id/u
 
 /home/sriram/pico/pico-sdk/src/rp2_common/hardware_uart/uart.c:
 
-/home/sriram/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/mpu.h:
-
-/home/sriram/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/i2c.h:
-
-/home/sriram/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c:
-
-/home/sriram/pico/pico-sdk/src/rp2_common/hardware_i2c/include/hardware/i2c.h:
-
 /home/sriram/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/ioqspi.h:
 
 /home/sriram/pico/pico-sdk/src/rp2_common/hardware_flash/include/hardware/flash.h:
@@ -2986,12 +3024,6 @@ CMakeFiles/example.dir/home/sriram/pico/pico-sdk/src/rp2_common/pico_unique_id/u
 /home/sriram/pico/pico-sdk/src/rp2_common/hardware_pll/include/hardware/pll.h:
 
 /home/sriram/pico/pico-sdk/src/rp2_common/hardware_clocks/include/hardware/clocks.h:
-
-/usr/include/newlib/unistd.h:
-
-/home/sriram/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/i2c.h:
-
-/home/sriram/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/clocks.h:
 
 /home/sriram/pico/pico-sdk/src/rp2_common/pico_printf/printf.c:
 
@@ -3025,6 +3057,40 @@ CMakeFiles/example.dir/home/sriram/pico/pico-sdk/src/rp2_common/pico_unique_id/u
 
 /home/sriram/pico/pico-sdk/src/common/pico_sync/lock_core.c:
 
+/usr/include/newlib/c++/10.3.1/stdlib.h:
+
+/home/sriram/pico/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/code.h:
+
+/usr/include/newlib/sys/_intsup.h:
+
+/home/sriram/pico/pico-sdk/lib/tinyusb/src/tusb.c:
+
+/home/sriram/pico/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom.h:
+
+/home/sriram/pico/pico-sdk/src/common/pico_stdlib/include/pico/stdlib.h:
+
+generated/pico_base/pico/config_autogen.h:
+
+/usr/include/newlib/stdlib.h:
+
+/home/sriram/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/mpu.h:
+
+/home/sriram/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/i2c.h:
+
+/home/sriram/pico/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c:
+
+/home/sriram/pico/pico-sdk/src/rp2_common/hardware_i2c/include/hardware/i2c.h:
+
+/home/sriram/pico/pico-sdk/src/rp2_common/hardware_vreg/include/hardware/vreg.h:
+
+/home/sriram/pico/pico-sdk/lib/tinyusb/src/device/dcd.h:
+
+/usr/include/newlib/unistd.h:
+
+/home/sriram/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/clocks.h:
+
+/home/sriram/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/i2c.h:
+
 /home/sriram/pico/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c:
 
 /home/sriram/pico/pico-sdk/lib/tinyusb/src/class/midi/midi_device.c:
@@ -3041,23 +3107,11 @@ CMakeFiles/example.dir/home/sriram/pico/pico-sdk/src/rp2_common/pico_unique_id/u
 
 /usr/include/newlib/_newlib_version.h:
 
+../bmx_defines.h:
+
 /usr/include/newlib/sys/unistd.h:
 
 /home/sriram/pico/pico-sdk/src/common/pico_sync/include/pico/mutex.h:
-
-generated/pico_base/pico/config_autogen.h:
-
-/home/sriram/pico/pico-sdk/src/rp2_common/pico_bootrom/include/pico/bootrom.h:
-
-/home/sriram/pico/pico-sdk/src/common/pico_stdlib/include/pico/stdlib.h:
-
-/usr/include/newlib/stdlib.h:
-
-/usr/include/newlib/c++/10.3.1/arm-none-eabi/thumb/v6-m/nofp/bits/c++config.h:
-
-/home/sriram/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/padsbank0.h:
-
-/usr/include/newlib/_ansi.h:
 
 /home/sriram/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/timer.h:
 
@@ -3083,16 +3137,6 @@ generated/pico_base/pico/config_autogen.h:
 
 /usr/lib/gcc/arm-none-eabi/10.3.1/include/stdint.h:
 
-/home/sriram/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h:
-
-/usr/include/newlib/c++/10.3.1/stdlib.h:
-
-/home/sriram/pico/pico-sdk/src/common/pico_binary_info/include/pico/binary_info/code.h:
-
-/usr/include/newlib/sys/_intsup.h:
-
-/home/sriram/pico/pico-sdk/lib/tinyusb/src/tusb.c:
-
 /usr/include/newlib/machine/_types.h:
 
 /usr/include/newlib/sys/stdio.h:
@@ -3108,6 +3152,10 @@ generated/pico_base/pico/config_autogen.h:
 /home/sriram/pico/pico-sdk/src/rp2_common/hardware_xosc/include/hardware/xosc.h:
 
 /usr/lib/gcc/arm-none-eabi/10.3.1/include/stdarg.h:
+
+/usr/include/newlib/alloca.h:
+
+/usr/include/newlib/sys/reent.h:
 
 /usr/include/newlib/sys/times.h:
 
@@ -3151,6 +3199,16 @@ generated/pico_base/pico/config_autogen.h:
 
 /usr/include/newlib/newlib.h:
 
+/usr/include/newlib/_ansi.h:
+
+/usr/include/newlib/c++/10.3.1/arm-none-eabi/thumb/v6-m/nofp/bits/c++config.h:
+
+/home/sriram/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/padsbank0.h:
+
+/home/sriram/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c:
+
+/home/sriram/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h:
+
 /home/sriram/pico/pico-sdk/src/rp2_common/hardware_irq/irq.c:
 
 /home/sriram/pico/pico-sdk/src/rp2_common/hardware_irq/include/hardware/irq.h:
@@ -3164,14 +3222,6 @@ generated/pico_base/pico/config_autogen.h:
 /home/sriram/pico/pico-sdk/src/rp2_common/hardware_base/include/hardware/address_mapped.h:
 
 /home/sriram/pico/pico-sdk/lib/tinyusb/src/common/tusb_compiler.h:
-
-../bmx_structs.h:
-
-/home/sriram/pico/pico-sdk/src/rp2_common/pico_double/double_math.c:
-
-/home/sriram/pico/pico-sdk/src/common/pico_time/include/pico/timeout_helper.h:
-
-/home/sriram/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.h:
 
 /usr/include/newlib/c++/10.3.1/arm-none-eabi/thumb/v6-m/nofp/bits/cpu_defines.h:
 
@@ -3195,6 +3245,10 @@ generated/pico_base/pico/config_autogen.h:
 
 /home/sriram/pico/pico-sdk/lib/tinyusb/src/class/cdc/cdc_device.c:
 
+/home/sriram/pico/pico-sdk/src/common/pico_sync/critical_section.c:
+
+/home/sriram/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h:
+
 /home/sriram/pico/pico-sdk/lib/tinyusb/src/class/dfu/dfu_rt_device.c:
 
 /home/sriram/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/pll.h:
@@ -3208,6 +3262,8 @@ generated/pico_base/pico/config_autogen.h:
 /home/sriram/pico/pico-sdk/src/rp2_common/pico_float/include/pico/float.h:
 
 /home/sriram/pico/pico-sdk/lib/tinyusb/src/class/video/video_device.c:
+
+/home/sriram/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/interp.h:
 
 /home/sriram/pico/pico-sdk/src/common/pico_time/include/pico/time.h:
 
@@ -3232,10 +3288,6 @@ generated/pico_base/pico/version.h:
 /home/sriram/pico/pico-sdk/src/rp2_common/pico_double/include/pico/double.h:
 
 /home/sriram/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/uart.h:
-
-/home/sriram/pico/pico-sdk/src/rp2_common/pico_stdio_usb/stdio_usb_descriptors.c:
-
-/home/sriram/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h:
 
 /home/sriram/pico/pico-sdk/lib/tinyusb/src/common/tusb_debug.h:
 
@@ -3319,6 +3371,12 @@ generated/pico_base/pico/version.h:
 
 /home/sriram/pico/pico-sdk/src/common/pico_sync/include/pico/critical_section.h:
 
+/home/sriram/pico/pico-sdk/src/rp2_common/pico_double/double_math.c:
+
+/home/sriram/pico/pico-sdk/src/common/pico_time/include/pico/timeout_helper.h:
+
+/home/sriram/pico/pico-sdk/lib/tinyusb/src/common/tusb_fifo.h:
+
 /home/sriram/pico/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c:
 
 /home/sriram/pico/pico-sdk/src/boards/include/boards/pico.h:
@@ -3347,10 +3405,6 @@ generated/pico_base/pico/version.h:
 
 /home/sriram/pico/pico-sdk/lib/tinyusb/src/class/vendor/vendor_device.c:
 
-/home/sriram/pico/pico-sdk/src/rp2_common/hardware_vreg/include/hardware/vreg.h:
-
-/home/sriram/pico/pico-sdk/lib/tinyusb/src/device/dcd.h:
-
 /home/sriram/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/tbman.h:
 
 /home/sriram/pico/pico-sdk/lib/tinyusb/src/class/hid/hid.h:
@@ -3372,11 +3426,3 @@ generated/pico_base/pico/version.h:
 /home/sriram/pico/pico-sdk/src/common/pico_sync/mutex.c:
 
 /home/sriram/pico/pico-sdk/lib/tinyusb/src/portable/raspberrypi/rp2040/rp2040_usb.c:
-
-/usr/include/newlib/sys/reent.h:
-
-/usr/include/newlib/alloca.h:
-
-/home/sriram/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/timer.h:
-
-/home/sriram/pico/pico-sdk/src/common/pico_sync/critical_section.c:

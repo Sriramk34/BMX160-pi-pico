@@ -54,4 +54,9 @@ CMakeFiles/example.dir/example.c.obj: \
  /home/sriram/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/uart.h \
  /home/sriram/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/uart.h \
  /home/sriram/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/dreq.h \
- /home/sriram/pico/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h
+ /home/sriram/pico/pico-sdk/src/rp2_common/pico_stdio_usb/include/pico/stdio_usb.h \
+ /home/sriram/Desktop/BMX160/BMX160-pi-pico/bmx160.h \
+ /home/sriram/pico/pico-sdk/src/rp2_common/hardware_i2c/include/hardware/i2c.h \
+ /home/sriram/pico/pico-sdk/src/rp2040/hardware_structs/include/hardware/structs/i2c.h \
+ /home/sriram/pico/pico-sdk/src/rp2040/hardware_regs/include/hardware/regs/i2c.h \
+ /home/sriram/Desktop/BMX160/BMX160-pi-pico/bmx_defines.h
