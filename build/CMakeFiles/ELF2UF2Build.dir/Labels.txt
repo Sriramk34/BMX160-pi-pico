@@ -1,0 +1,13 @@
+# Target labels
+ ELF2UF2Build
+# Source files and their labels
+/home/sriram/Desktop/BMX160/BMX160-pi-pico/build/CMakeFiles/ELF2UF2Build
+/home/sriram/Desktop/BMX160/BMX160-pi-pico/build/CMakeFiles/ELF2UF2Build.rule
+/home/sriram/Desktop/BMX160/BMX160-pi-pico/build/CMakeFiles/ELF2UF2Build-complete.rule
+/home/sriram/Desktop/BMX160/BMX160-pi-pico/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-build.rule
+/home/sriram/Desktop/BMX160/BMX160-pi-pico/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-configure.rule
+/home/sriram/Desktop/BMX160/BMX160-pi-pico/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-download.rule
+/home/sriram/Desktop/BMX160/BMX160-pi-pico/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-install.rule
+/home/sriram/Desktop/BMX160/BMX160-pi-pico/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-mkdir.rule
+/home/sriram/Desktop/BMX160/BMX160-pi-pico/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-patch.rule
+/home/sriram/Desktop/BMX160/BMX160-pi-pico/build/elf2uf2/src/ELF2UF2Build-stamp/ELF2UF2Build-update.rule
