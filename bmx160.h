@@ -9,11 +9,11 @@
 
 
 //Write to register on BMX
-static inline void i2c_write_to_memory(bmx_config *bmx, uint8_t memory_addr, uint8_t *data, uint8_t len);
+static void i2c_write_to_memory(bmx_config *bmx, uint8_t memory_addr, uint8_t data);
 
 
 //Read from register on BMX
-static inline uint8_t i2c_read_from_memory(bmx_config *bmx, uint8_t memory_addr, uint8_t *buf, uint8_t len);
+static void i2c_read_from_memory(bmx_config *bmx, uint8_t memory_addr, uint8_t *buf, uint8_t len);
 
 
 /*********************************************************
@@ -64,10 +64,9 @@ bool self_test_gyro(bmx_config *bmx);
 
 /****************************************************
  * Setup pins for I2C for the BMX sensor
- * Return true if initialized successfullt
- * Else return false
+ * Run set PMU after this to start the sensor
 *****************************************************/
-bool init_sensor(bmx_config *bmx, uint8_t sck_pin, uint8_t sda_pin);
+void init_sensor(bmx_config *bmx, uint8_t sck_pin, uint8_t sda_pin);
 
 
 /******************************************************
@@ -77,4 +76,14 @@ bool init_sensor(bmx_config *bmx, uint8_t sck_pin, uint8_t sda_pin);
 */
 void bmx_foc(bmx_config *bmx);
 
+/*****************************************************
+ * Fucntion to write value to registers manually
+******************************************************/
+void bmx_write_to(bmx_config *bmx, uint8_t reg, uint8_t data);
+
+uint8_t bmx_read_from(bmx_config *bmx, uint8_t reg);
+
+void bmx_set_config(bmx_config *bmx);
+
+void bmx_get_offset(bmx_config *bmx, uint8_t *accel, uint16_t *gyro);
 #endif

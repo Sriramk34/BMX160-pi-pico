@@ -1,30 +1,24 @@
 #include "bmx160.h"
 #include "bmx_defines.h"
 
-static inline void i2c_write_to_memory(bmx_config *bmx, uint8_t memory_addr, uint8_t *data, uint8_t len)
+static void i2c_write_to_memory(bmx_config *bmx, uint8_t memory_addr, uint8_t data)
 {
-    uint8_t addr = memory_addr;
-    i2c_write_blocking(bmx->i2c, bmx->addr, &addr, 1, true);
-    for(int i =0; i<len; i++){
-        i2c_write_blocking(bmx->i2c, bmx->addr, data, len, false);
-    }
+    uint8_t buf[2] = {memory_addr, data};
+    i2c_write_blocking(bmx->i2c, bmx->addr, buf, 2, false);
 }
 
-static inline uint8_t i2c_read_from_memory(bmx_config *bmx, uint8_t memory_addr, uint8_t *buf, uint8_t len)
+static void i2c_read_from_memory(bmx_config *bmx, uint8_t memory_addr, uint8_t *buf, uint8_t len)
 {
     uint8_t addr = memory_addr;
     i2c_write_blocking(bmx->i2c, bmx->addr, &addr, 1, true);
-    for(int i =0; i<len; i++)
-    {
-        *(buf + i) = i2c_read_blocking(bmx->i2c, bmx->addr, buf, len, false);
-    }
+    i2c_read_blocking(bmx->i2c, bmx->addr, buf, len, false);
 }
 
 void read_accel_data_raw(bmx_config *bmx, uint16_t *buf){
     uint8_t temp[6];
     i2c_read_from_memory(bmx, ACC_DATA_REG, temp, 6);
     for(int i =0; i<3; i++){
-        *(buf + i) = (temp[2*i] << 8) | temp[2*i + 1];
+        *(buf + i) = (temp[2*i + 1] << 8) | temp[2*i];
     }
 }
 
@@ -32,7 +26,7 @@ void read_gyro_data_raw(bmx_config *bmx, uint16_t *buf){
     uint8_t temp[6];
     i2c_read_from_memory(bmx, GYR_DATA_REG, temp, 6);
     for(int i =0; i<3; i++){
-        *(buf + i) = (temp[2*i] << 8) | temp[2*i + 1];
+        *(buf + i) = (temp[2*i + 1] << 8) | temp[2*i];
     }
 }
 
@@ -57,11 +51,11 @@ void convert_accel_data(bmx_config *bmx, uint16_t *data, double *acc_data){
     }
 
     for(int i=0; i<3; i++){
-        *(acc_data + i) = (double)(*(data + i)) * k;
+        *(acc_data + i) = (double)(int16_t)(*(data + i)) * k;
     }
 }
 
-void convert_gyrp_data(bmx_config *bmx, uint16_t *data, double *gyro_data){
+void convert_gyro_data(bmx_config *bmx, uint16_t *data, double *gyro_data){
     double k;
     switch(bmx->gyro_range){
         case GYR_RANGE_2000:
@@ -85,7 +79,7 @@ void convert_gyrp_data(bmx_config *bmx, uint16_t *data, double *gyro_data){
     }
 
     for(int i=0; i<3; i++){
-        *(gyro_data + i) = (double)(*(data + i)) * k;
+        *(gyro_data + i) = (double)(int16_t)(*(data + i)) * k;
     }
 }
 
@@ -115,13 +109,13 @@ bmx_config get_default_config(){
     ret.accel_range = ACC_RANGE_2;
     ret.accel_rate = ACC_RATE_400;
     ret.addr = BMX_DEFAULT_ADDR;
-    ret.foc_en = false;
     ret.gyro_range = GYR_RANGE_250;
     ret.gyro_rate = GYR_RATE_400;
     ret.i2c = i2c0;
     ret.power_mode.accel_power_mode = ACCEL_POWER_NOMAL;
     ret.power_mode.gyro_power_mode = GYRO_POWER_NORMAL;
     ret.power_mode.mag_power_mode = MAG_POWER_NORMAL;
+    return ret;
 }
 
 bool set_pmu(bmx_config *bmx){
@@ -130,7 +124,8 @@ bool set_pmu(bmx_config *bmx){
     data[1] = SET_GYRO_PMU | bmx->power_mode.gyro_power_mode;
     data[2] = SET_MAG_PMU | bmx->power_mode.mag_power_mode;
     for(int i=0; i<3; i++){
-        i2c_write_to_memory(bmx, COMMAND_REG, (data + i), 1);
+        i2c_write_to_memory(bmx, COMMAND_REG, data[i]);
+        sleep_ms(80);
     }
     uint8_t test = get_pmu_status(bmx) & PMU_MASK;
     uint8_t temp = (data[0] << 4 | data[1] << 2 | data[2] ) & PMU_MASK;
@@ -144,14 +139,53 @@ uint8_t get_pmu_status(bmx_config *bmx){
     return ret;
 }
 
-bool init_sensor(bmx_config *bmx, uint8_t sck_pin, uint8_t sda_pin){
+void init_sensor(bmx_config *bmx, uint8_t sck_pin, uint8_t sda_pin){
     bool ret = true;
-    i2c_init(bmx->i2c, 400000);
+    gpio_init(sck_pin);
+    gpio_init(sda_pin);
     gpio_set_function(sck_pin, GPIO_FUNC_I2C);
     gpio_set_function(sda_pin, GPIO_FUNC_I2C);
     gpio_pull_up(sck_pin);
     gpio_pull_up(sda_pin);
-    ret = set_pmu(bmx);
-    return ret;
+    i2c_init(bmx->i2c, 400000);
 }
+
+void bmx_write_to(bmx_config *bmx, uint8_t reg, uint8_t data){
+    i2c_write_to_memory(bmx, reg, data);
+}
+
+void bmx_foc(bmx_config *bmx){
+    foc_conf temp = bmx->foc_config;
+    uint8_t foc_reg = temp.foc_gyr_enable << 6 | temp.foc_acc_x << 4 | temp.foc_acc_y << 2 | temp.foc_acc_z;
+    i2c_write_to_memory(bmx, FOC_CONF_REG, foc_reg & 0x7F);
+    i2c_write_to_memory(bmx, COMMAND_REG, 0x03);
+    sleep_ms(1000);
+    uint8_t t;
+    i2c_read_from_memory(bmx, 0x77, &t, 1);
+    uint8_t foc_enable = 0;
+    if(temp.foc_gyr_enable){
+        if(temp.foc_acc_x | temp.foc_acc_y | temp.foc_acc_z){
+            foc_enable = 0xC0;
+        }else{
+            foc_enable = 0x80;
+        }
+    }else if(temp.foc_acc_x | temp.foc_acc_y | temp.foc_acc_z){
+        foc_enable = 0x40;
+    }
+    i2c_write_to_memory(bmx, 0x77, t | 0xC0);
+}
+
+void bmx_set_config(bmx_config *bmx){
+    i2c_write_to_memory(bmx, ACC_CONF_REG, CONFIG_DEFAULT | bmx->accel_rate);
+    i2c_write_to_memory(bmx, ACC_RANGE_REG, bmx->accel_range);
+    i2c_write_to_memory(bmx, GYRO_CONF_REG, bmx->gyro_rate);
+    i2c_write_to_memory(bmx, GYRO_RANGE_REG, bmx->gyro_range);
+}
+
+uint8_t bmx_read_from(bmx_config *bmx, uint8_t reg){
+    uint8_t temp;
+    i2c_read_from_memory(bmx, reg, &temp, 1);
+    return temp;
+}
+
 
